@@ -28,7 +28,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   name                = "project2-vm"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
-  size                = "Standard_B1s"
+  size                = "Standard_D2lds_v6"
   admin_username      = var.vm_user
 
   network_interface_ids = [
@@ -52,5 +52,6 @@ resource "azurerm_linux_virtual_machine" "vm" {
     version   = "latest"
   }
 }
+
 
 
