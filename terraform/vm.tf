@@ -28,7 +28,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   name                = "project2-vm"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
-  size                = "Standard_D2s_v3"
+  size                = "Standard_D2lds_v6"
   admin_username      = var.vm_user
 
   network_interface_ids = [
@@ -46,12 +46,13 @@ resource "azurerm_linux_virtual_machine" "vm" {
   }
 
   source_image_reference {
-    publisher = "Canonical"
-    offer     = "0001-com-ubuntu-server-jammy"
-    sku       = "22_04-lts"
-    version   = "latest"
-  }
+  publisher = "Canonical"
+  offer     = "0001-com-ubuntu-server-jammy"
+  sku       = "22_04-lts-gen2"
+  version   = "latest"
 }
+}
+
 
 
 
