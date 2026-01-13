@@ -26,7 +26,7 @@ jobs:
    needs: deploy
    runs-on: ubuntu-latest
    steps: 
-    
+    - uses: actions/checkout@v4
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v3
       with:
@@ -87,6 +87,7 @@ jobs:
         ssh -i key.pem -o StrictHostKeyChecking=no \
         ${{ secrets.VM_USER }}@$VM_IP \
         "sudo systemctl restart nginx"
+
 
 
 
