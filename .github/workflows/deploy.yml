@@ -31,7 +31,6 @@ jobs:
       run: |
         cd terraform
         terraform init
-        terraform plan
         terraform apply -auto-approve \
           -var "vm_user=${{ secrets.VM_USER }}" \
           -var "ssh_public_key=${{ secrets.SSH_PUBLIC_KEY }}"
@@ -67,6 +66,7 @@ jobs:
         ssh -i key.pem -o StrictHostKeyChecking=no \
         ${{ secrets.VM_USER }}@$VM_IP \
         "sudo systemctl restart nginx"
+
 
 
 
