@@ -8,5 +8,6 @@ variable "ssh_public_key" {
 
 variable "location" {
   type    = string
-  default = "East US"
+  default = "Central india"
 }
+
