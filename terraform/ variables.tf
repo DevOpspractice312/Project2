@@ -59,3 +59,13 @@ variable "tags" {
     Project     = "DevOps"
   }
 }
+variable "vm_user" {
+  description = "Admin username for the Azure VM"
+  type        = string
+}
+
+variable "ssh_public_key" {
+  description = "SSH public key content"
+  type        = string
+  default     = "~/.ssh/id_rsa.pub"
+}
