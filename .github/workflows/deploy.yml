@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main
+permissions: 
+ id-token: write
+ contents: read
 
 jobs:
   deploy:
@@ -58,3 +61,4 @@ jobs:
         ssh -i key.pem -o StrictHostKeyChecking=no \
         ${{ secrets.VM_USER }}@$VM_IP \
         "sudo systemctl restart nginx"
+
